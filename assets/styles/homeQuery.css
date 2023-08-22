@@ -1,0 +1,125 @@
+@media only screen and (min-width: 100px) and (max-width: 1260px) {
+  nav .logo-search .search-box {
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    padding: 0;
+  }
+
+  nav .logo-search .search-box::placeholder {
+    color: transparent;
+  }
+
+  /* main Sec */
+  main .last-sec {
+    flex-basis: 30% !important;
+    font-size: 15px;
+  }
+
+  main .last-sec > div p {
+    font-size: 12px;
+  }
+
+  main .friend-request .head {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (min-width: 100px) and (max-width: 1100px) {
+  nav .icons-menu .game-icon {
+    display: none;
+  }
+
+  nav .icons-menu .stroke-menu {
+    display: block;
+  }
+
+  /* main sec */
+
+  main .user-info {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 100px) and (max-width: 900px) {
+  main .last-sec {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 100px) and (max-width: 700px) {
+  nav .icons-menu {
+    display: none !important;
+  }
+
+  nav .logo-search .stroke-menu-res {
+    display: block;
+    width: 1.5rem;
+  }
+
+  nav {
+    width: 100vw;
+    height: auto;
+    flex-basis: 100%;
+    padding: 5px !important;
+  }
+
+  nav .logo-search {
+    width: 100%;
+    gap: 1rem;
+  }
+
+  nav .user-nav {
+    width: 100%;
+  }
+
+  nav .logo-search img {
+    width: clamp(1.5rem, 2.5rem, 2.5rem);
+  }
+
+  nav .logo-search .search-icon {
+    width: 1rem;
+    left: 4.2rem;
+  }
+
+  nav .logo-search .search-box {
+    width: clamp(1.5rem, 2.5rem, 2.5rem);
+    height: 2.5rem;
+  }
+
+  /* main .stories .scroll-buttons,
+  main .reels-post .scroll-buttons {
+    position: absolute;
+    gap: 2rem !important;
+    display: none !important;
+    z-index: 30;
+  } */
+
+  main .post-section {
+    margin: 0 !important;
+    flex-basis: 100% !important;
+    width: 100%;
+  }
+
+  /* 
+  main .user-story,
+  main .other-story {
+    min-width: 1rem;
+    width: 100%;
+    max-width: 10rem;
+    height: 17rem;
+  } */
+}
+
+@media only screen and (min-width: 100px) and (max-width: 350px) {
+  nav .logo-search .stroke-menu-res {
+    display: none;
+  }
+  main .upload-search .user-img,
+  main .other-user-details .user-img {
+    max-width: 2rem !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    border-radius: 50%;
+  }
+}
