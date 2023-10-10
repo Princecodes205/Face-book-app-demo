@@ -184,7 +184,6 @@ main {
   color: grey;
   font-size: 15px;
   font-weight: 500;
-  /* height: calc(100vh -60rem); */
   width: 100%;
   position: relative;
 }
@@ -303,7 +302,6 @@ main .post-section {
   overflow: auto;
   flex: 1;
   margin: 2rem;
-  /* overflow-x: hidden; */
   margin: 1rem;
 }
 
@@ -459,6 +457,13 @@ main .stories-post {
   scroll-snap-type: x mandatory;
   gap: 0.5rem;
   white-space: nowrap;
+}
+
+main .fullStoriesSec {
+  position: fixed;
+  background-color: red;
+  z-index: 80;
+  inset: 0;
 }
 
 main .stories-post::-webkit-scrollbar {
