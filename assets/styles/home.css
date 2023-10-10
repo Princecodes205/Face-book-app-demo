@@ -460,10 +460,63 @@ main .stories-post {
 }
 
 main .fullStoriesSec {
-  position: fixed;
-  background-color: red;
-  z-index: 80;
-  inset: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.807);
+  z-index: 180;
+  display: grid;
+  place-content: center;
+  /* inset: 0; */
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+}
+
+main .fullStoriesSec .container {
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  display: grid;
+  place-content: center;
+  height: 90vh;
+}
+
+main .fullStoriesSec .cancleBtnNew {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: white;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  border-radius: 100%;
+  z-index: 150;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+main .fullStoriesSec .image {
+  max-width: 700px;
+  min-width: 2rem;
+  width: 100%;
+  /* height: 100%; */
+  aspect-ratio: 10/16;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+main .fullStoriesSec .scroll-buttons {
+  min-width: 2rem;
+  height: 50px;
+  width: 100%;
+  top: 50%;
+  bottom: 50%;
+  left: 0;
+}
+
+main .fullStoriesSec .scroll-buttons img {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.674);
 }
 
 main .stories-post::-webkit-scrollbar {
