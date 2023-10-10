@@ -54,6 +54,10 @@ nav .logo-search {
   flex-basis: 22%;
 }
 
+nav .input-box {
+  position: relative;
+}
+
 nav .search-box {
   height: 2.5rem;
   width: 15rem;
@@ -61,14 +65,43 @@ nav .search-box {
   border: transparent;
   background-color: var(--bg-g);
   padding: 0px 30px;
-  position: relative;
   font-size: 14px;
+  outline: none;
+  border: none;
+}
+
+nav .search-section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 100;
+}
+
+nav .searchResults {
+  position: absolute;
+  display: none !important;
+  background-color: white;
+  width: 19.5rem;
+  border-radius: 10px;
+  left: 0;
+  top: 0;
+  height: auto;
+  padding: 70px 10px 10px;
+  z-index: 50;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav .searchResults .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 nav .search-icon {
   width: 1rem;
   position: absolute;
-  left: 4.3rem;
+  left: 0.8rem;
 }
 
 nav .icons-menu {
@@ -96,7 +129,7 @@ nav .user-nav {
   flex-basis: 22%;
 }
 
-nav .stroke-menu,
+nav div .stroke-menu,
 nav .menu-plus {
   display: none;
 }
@@ -113,7 +146,7 @@ nav .user-nav img {
   position: relative;
 }
 
-nav .user-nav a div {
+nav .user-nav div {
   background-color: var(--bg-g);
   display: flex;
   align-items: center;
@@ -148,13 +181,12 @@ nav .user-nav .few-noti {
 main {
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   color: grey;
   font-size: 15px;
   font-weight: 500;
-  /* overflow: hidden; */
-  height: 100vh;
+  /* height: calc(100vh -60rem); */
   width: 100%;
+  position: relative;
 }
 
 main a {
@@ -259,7 +291,6 @@ main .user-info .company-links hr {
 }
 
 /* Posts section */
-
 main .post-section {
   display: flex;
   flex-direction: column;
@@ -296,7 +327,7 @@ main .reels-post,
 main .load-more {
   min-width: 1px;
   width: 100%;
-  max-width: 35rem;
+  max-width: 45rem;
   height: auto;
   background-color: white;
   border-radius: 5px;
@@ -308,8 +339,8 @@ main .load-more {
 main .stories {
   min-height: 20rem;
   margin: 0;
-  min-width: auto;
   width: 100%;
+  max-width: 45rem;
   overflow-x: auto;
   white-space: nowrap;
   display: flex;
@@ -336,6 +367,10 @@ main .other-story {
   cursor: pointer;
   scroll-snap-align: center;
 }
+
+/* main .other-story .author {
+ 
+} */
 
 main .user-story a,
 main .other-story a {
@@ -387,6 +422,9 @@ main .other-story p {
   bottom: 0.6rem;
   left: 1rem;
   color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  background: linear-gradient(transparent, #2222 130%);
 }
 
 main .user-story:hover .profile-img,
@@ -445,6 +483,7 @@ main .scroll-buttons {
   justify-content: space-between;
   width: 90%;
   z-index: 30;
+  left: 2rem;
 }
 
 main .scroll-buttons .left-scroll,
@@ -461,15 +500,14 @@ main .post-section .user-upload {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  display: none;
+  padding: 15px 15px;
 }
 
 main .upload-search {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 15px 15px;
   gap: 0.8rem;
+  width: 100%;
 }
 
 main .upload-search .user-img,
@@ -480,8 +518,12 @@ main .other-user-details .user-img {
   border-radius: 50%;
 }
 
+main .upload-search .input {
+  width: 100%;
+}
+
 main .upload-search input {
-  width: clamp(1px, 16rem, 26rem) !important;
+  width: 100%;
   height: 2.5rem;
   border-radius: 2rem;
   outline: none;
@@ -499,25 +541,29 @@ main .upload-search input:hover {
 
 main .user-upload hr {
   color: grey;
-  max-width: 30rem;
-  min-width: auto;
+  width: 100%;
+  margin: 15px 0px;
 }
 
 main .upload-file {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 main .upload-file div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
   min-width: 1px;
-  max-width: 9rem;
+  width: 10rem;
   height: 2.5rem;
   font-weight: 600;
   font-size: 10px;
+  cursor: pointer;
 }
 
 main .upload-file img {
@@ -747,7 +793,7 @@ main .all-reels::-webkit-scrollbar {
   background-color: transparent;
 }
 
-main .reels-wrapper a div {
+main .reels-wrapper div {
   height: 22rem;
   width: 13rem;
   position: relative;
@@ -1199,4 +1245,24 @@ main .contact-body div::after {
   border: 1px solid white;
   left: 2rem;
   top: 2rem;
+}
+
+/* Hide download and options buttons */
+#myVideo::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+/* Show play button and seek bar */
+#myVideo::-webkit-media-controls-play-button,
+#myVideo::-webkit-media-controls-current-time-display,
+#myVideo::-webkit-media-controls-time-remaining-display,
+#myVideo::-webkit-media-controls-seek-back-button,
+#myVideo::-webkit-media-controls-seek-forward-button,
+#myVideo::-webkit-media-controls-mute-button,
+#myVideo::-webkit-media-controls-toggle-closed-captions-button {
+  display: block !important;
+}
+
+.hidden {
+  display: none !important;
 }

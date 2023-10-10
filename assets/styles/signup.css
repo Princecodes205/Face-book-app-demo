@@ -1,0 +1,15 @@
+section .border-dark {
+  border: 1px solid grey !important;
+}
+
+#errorMsg {
+  font-size: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+.radioInvalid {
+  border: 2px solid red !important;
+}

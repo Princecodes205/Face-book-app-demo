@@ -19,11 +19,17 @@ body {
   font-size: 18px;
 }
 
+input:invalid {
+  border: 1px solid red !important;
+}
+
 footer {
   background-color: whitesmoke;
   padding: 2rem 10rem;
   color: grey;
   font-size: 12px;
+  bottom: 0;
+  position: fixed;
 }
 
 footer .lang {
