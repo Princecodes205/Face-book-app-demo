@@ -28,8 +28,6 @@ footer {
   padding: 2rem 10rem;
   color: grey;
   font-size: 12px;
-  bottom: 0;
-  position: fixed;
 }
 
 footer .lang {
